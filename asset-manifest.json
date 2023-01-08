@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/LeetcodeGraphVisualisation/static/js/main.09f0fb71.js",
-    "index.html": "/LeetcodeGraphVisualisation/index.html",
-    "main.09f0fb71.js.map": "/LeetcodeGraphVisualisation/static/js/main.09f0fb71.js.map"
+    "main.js": "/LeetcodeGraphVisualisation/frontend/static/js/main.09f0fb71.js",
+    "index.html": "/LeetcodeGraphVisualisation/frontend/index.html",
+    "main.09f0fb71.js.map": "/LeetcodeGraphVisualisation/frontend/static/js/main.09f0fb71.js.map"
   },
   "entrypoints": [
     "static/js/main.09f0fb71.js"
