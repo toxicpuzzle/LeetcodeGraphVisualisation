@@ -1,6 +1,12 @@
+/* NodeInput component contains main functionality for handling the input box  
+    and focusing on a node */
+
 export default function NodeInput({network}) {
 
-    function focusOnNode(node, network) {
+    // focus on node entered into input box
+    function onSubmitEvent(e) {
+        e.preventDefault();
+
         var options = {
             scale: 1.0,
             offset: { x: 0, y: -100 },
@@ -10,19 +16,15 @@ export default function NodeInput({network}) {
             },
         };
         
+        const node = (e.target)[0].value
         network.focus(node, options);
     }
-
-    function onSubmitEvent(e) {
-        e.preventDefault();
-
-        focusOnNode((e.target)[0].value, network);
-    }
     
+    // html for "focus on node" text input box
     return (
         <div style={{textAlign: "center"}}>
             <form data-testid='form' onSubmit={onSubmitEvent}>
-                <label> Enter question number to focus on:  </label>
+                <label>To centre a node, click on it or enter the number below: </label><br></br>
                 <input type='text' id='alert' name='alert' />
                 <button type='submit'> Enter </button>
             </form>

@@ -1,3 +1,8 @@
+/*
+  React graph vis is built using the vis.js network API, for 
+  more info on events, options, methods : https://visjs.github.io/vis-network/docs/network/ 
+*/
+
 import Graph from "react-graph-vis";
 import React, { Component } from "react";
 import ReactDOM from "react-dom/client";
@@ -8,6 +13,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    // Sets the original state of the graph before changes are made
     this.state = {
         counter: 5,
         graph: {
@@ -26,6 +32,8 @@ class App extends Component {
           ]
     
         },
+        /* events control what happens when user interacts with graph
+           see more at vis network docs */
         'events': {
           select: ({ nodes, edges }) => {
             var options = {
@@ -38,12 +46,13 @@ class App extends Component {
             };
           
             this.network.focus(nodes, options);
-            console.log(edges);
           },
           doubleClick: ({ pointer: { canvas } }) => {
             alert("x : " + canvas.x + "; y : " + canvas.y + ";");
           }
         },
+        /* options to control characteristics of graph, see more at
+          vis network docs */
         'options' : {
           layout: {
             hierarchical: false
@@ -67,17 +76,14 @@ class App extends Component {
     this.setNetworkInstance = this.setNetworkInstance.bind(this);
   }
 
-  handleChange(input) {
-    console.log(input.target.value);
-  }
-
   setNetworkInstance(nw) {
     this.setState({
         network: nw,
     });
     this.network = nw;
   } 
-  
+
+  // main html for title + graph canvas of page
     render() { 
       return ( 
       <div>
@@ -95,6 +101,7 @@ class App extends Component {
 
 }
 
+// render react app 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
