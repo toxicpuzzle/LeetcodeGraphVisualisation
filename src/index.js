@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom/client";
 import NodeInput from "./components/NodeInput"
 
-
 class App extends Component {
 
   constructor(props) {
